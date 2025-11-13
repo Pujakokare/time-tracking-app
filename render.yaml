@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: punch-in-tracker
+    env: node
+    buildCommand: npm run install-backend && npm run install-frontend && npm run build-frontend
+    startCommand: npm start
+    envVars:
+      - key: COUCHBASE_URL
+        sync: false
+      - key: COUCHBASE_USERNAME
+        sync: false
+      - key: COUCHBASE_PASSWORD
+        sync: false
+      - key: COUCHBASE_BUCKET
+        sync: false
+      - key: NODE_ENV
+        value: production
